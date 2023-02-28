@@ -1,0 +1,531 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #0D1B2A;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Jost', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1B263B;
+    padding: 2rem 5rem;
+    align-items: center;
+    box-shadow: 1px 1px 10px black;
+    width: 90%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.title{
+    color: #E0E1DD;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    background-color: transparent;
+    font-family: 'Labrada', serif;
+    font-weight: 900;
+}
+.card-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin: 0;
+    margin-top: 10rem;
+}
+.card{
+    width: 20rem;
+margin: 1rem;
+}
+.data{
+    font-size: 0.8rem;
+}
+.box{
+    height: 20rem;
+    width: 20rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0.5rem black;
+}
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.info{
+    position: absolute;
+    top:0;left: 0;
+    min-height: 100%;
+    width: 90%;
+    background: rgba(51,51,51,0.6);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    color: beige;
+    transform: scale(0);
+    padding: 0 1rem;
+   
+}
+.box:hover .info,.trending-box:hover .trending-info{
+    transform: scale(1);
+}
+
+.data,.card-title,.description{
+    color: #E0E1DD;
+}
+.data,.card-text,.card-title{
+    margin-top: 1rem;
+}
+.img{
+    width: 21rem;
+    height: 15rem;
+}
+.card-text{
+display: flex;
+justify-content: space-between;
+color: #E0E1DD;
+}
+.fa-star{
+    margin-right: 0.1rem;
+ color: #ffd60a;
+}
+
+.select{
+    border-color: #E0E1DD;
+    border-radius: 0.3rem;
+    color: #E0E1DD;
+    background-color: #1B263B;
+    width: 6rem;
+    height: 2rem;
+}
+#up {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #457b9d;
+    color: #E0E1DD;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #up:hover {
+    background-color: #1B263B;
+  }
+  
+/* Trending films section
+_______________________ */
+
+.trending{
+margin-top: 10rem;
+margin-bottom: -8rem;
+display: flex;
+justify-content: center;
+text-align: center;
+flex-wrap: wrap;
+}
+.trending-title{
+    color: #E0E1DD;
+    text-transform: capitalize;
+}
+.trending-card{
+    text-align: center;
+    background-color: #457b9d;
+    margin: 1rem;
+    width: 42rem;
+    box-shadow: 0 0 0.5rem black;
+}
+
+.trending-info{
+    position: absolute;
+    top:4.9rem;left: 3rem;
+    min-height: 69.3%;
+    width: 81.8%;
+    background: rgba(51,51,51,0.6);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    color: beige;
+    transform: scale(0);
+    padding: 0 1rem;
+    cursor: pointer;
+}
+.trending-img{
+    margin-top: 1rem;
+    width: 38rem;
+    padding-bottom: 0.5rem;
+}
+.day,.week{
+   position: relative;
+}
+.plus{
+    position: absolute;
+    top:15rem;left: 1.5rem;
+    cursor: pointer;
+}
+.minus{
+    position: absolute;
+    top:15rem;right: 1.5rem;
+    cursor: pointer;
+}
+.trending-card-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #E0E1DD;
+padding-bottom: 1rem;
+}
+.plus,.minus{
+    border: none;
+    background-color: transparent;
+    color: #E0E1DD;
+    font-size: 1.2rem;
+}
+.trending-card-title{
+    text-transform: capitalize;
+}
+
+.trending.none{
+    display: none;
+}
+
+/* Media Query
+_______________________ */
+  @media only screen and (max-width: 1280px) {
+   
+    .trending-card{
+        width: 35rem;
+    }
+    .trending-img{
+        width: 31rem;
+    }
+    .trending-info{
+        min-height: 65%;
+        width: 78.5%;
+    }
+    .plus,.minus{
+        top:14rem;
+    }
+    .trending{
+        margin-bottom: -8rem;
+    }
+  }
+  @media only screen and (max-width: 1030px) {
+  
+    .trending-card{
+        width: 27rem!important;
+    }
+    .trending-img{
+        width: 23rem;
+    }
+    .trending-info{
+        min-height: 58%;
+        width: 72.5%;
+    }
+    .plus{
+        top:12rem;
+    }
+    .minus{
+        top:12rem;
+    }
+   .trending-description{
+    font-size: 0.8rem;
+   }
+  
+  }
+  @media only screen and (max-width:912px) {
+    nav{
+        padding: 2rem 2rem;
+        width: 93%;
+    }
+    .card-flex{
+        margin-top: 10rem;
+    }
+    .trending{
+        margin-bottom: -5rem;
+    }
+    .week{
+        margin-top: 2rem;
+      }
+    .trending-card{
+        width: 42rem!important;
+    }
+    .trending-img{
+        width: 38rem;
+    }
+    .trending-info{
+        min-height: 67.5%;
+        width: 81.9%;
+    }
+    .plus,.minus{
+        top:15rem;
+    }
+    .trending-card-text{
+        font-size: 1.5rem;
+       }
+  }
+  
+  @media only screen and (max-width: 650px) {
+    nav{
+        padding: 2rem 1.5rem;
+        width: 93%;
+    }
+    .trending{
+        margin-bottom: -5rem;
+    }
+    .week{
+        margin-top: 2rem;
+      }
+    .trending-card{
+        width: 35rem!important;
+    }
+    .trending-img{
+        width: 31rem;
+    }
+    .trending-info{
+        min-height: 64%;
+        width: 78.5%;
+    }
+    .plus,.minus{
+        top:13rem;
+    }
+    .trending-card-text{
+        font-size: 1.2rem;
+       }
+  }
+  @media only screen and (max-width: 550px) {
+    .title{
+        font-size: 1.5rem;
+    }
+    .trending-card{
+        width: 30rem!important;
+    }
+    .trending-img{
+        width: 26rem;
+    }
+    .trending-info{
+        min-height: 60%;
+        width: 75%;
+    }
+    .plus,.minus{
+        top:12rem;
+    }
+    .trending{
+        margin-bottom: -8rem;
+    }
+    #up {
+        right: 13px;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+      }
+  }
+  @media only screen and (max-width: 481px) {
+    .trending-card-text{
+        font-size: 0.75rem;
+        padding:0 0.2rem;
+
+    }
+    nav{
+        width: 90%;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .trending{
+        margin-bottom: -8rem;
+    }
+    .trending-card{
+        width: 22rem!important;
+        height: 22rem;
+    }
+    .trending-img{
+        width: 22rem;
+        height: 18rem;
+        margin-top: 0;
+    }
+    .trending-info{
+        top:3.9rem;left: 1rem;
+        min-height: 67%;
+        width: 83.5%;
+    }
+   
+       .plus,.minus{
+        font-size: 1rem;
+    }
+    .trending-data{
+        display: none;
+    }
+    .trending-description{
+        width: 90%;
+        font-size: 0.9rem!important;
+    }
+    .trending-card-text{
+        font-size: 0.9rem!important;
+       }
+   
+  }
+  @media only screen and (max-width: 380px){
+   nav{
+    width: 88%;
+   }
+    .trending-card{
+        width: 20rem!important;
+        height: 19.5rem;
+    }
+    .trending-img{
+        width: 20rem;
+        height: 16rem;
+    }
+    .plus,.minus{
+        font-size: 0.8rem;
+        top:11rem;
+    }
+    .trending-info{
+        top:3.9rem;left: 1rem;
+        min-height: 65.5%;
+        width: 82%;
+        font-size: 0.8rem;
+    }
+    .title{
+        font-size: 1.2rem;
+    }
+    .select{
+        font-size: 0.7rem;
+        width: 6rem;
+        height: 1.5rem;
+    }
+    .trending-card-text,.trending-description{
+        font-size: 0.8rem!important;
+       }
+  }
+  @media only screen and (max-width: 325px){
+    nav{
+        padding: 1rem 1rem;
+        width: 90%;
+    }
+    .trending{
+        margin-top: 8rem;
+    }
+    .trending-card-text{
+        font-size: 0.75rem;
+        padding:0 0.3rem;
+
+    }
+    .trending-card{
+        width: 18rem!important;
+        height: 18.5rem;
+    }
+    .trending-img{
+        width: 18rem;
+        height: 15rem;
+    }
+    .plus,.minus{
+        font-size: 0.8rem;
+    }
+    .trending-info{
+        top:3.9rem;left: 1rem;
+        min-height: 64%;
+        width: 80%;
+        font-size: 0.8rem;
+    }
+    .box{
+        height: 18.5rem;
+        width: 18rem;
+    }
+    .trending-card-text,.trending-description{
+        font-size: 0.7rem!important;
+       }
+       #up {
+        right: 13px;
+        font-size: 0.8rem;
+        padding: 0.2rem;
+      }
+  }
+  @media only screen and (max-width: 281px){
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .plus,.minus{
+        top: 9rem;
+    }
+    .trending-title{
+        font-size: 1rem;
+    }
+    .trending-card{
+        width: 16rem!important;
+        height: 16rem;
+    }
+    .trending-card-title{
+        font-size: 1rem;
+    }
+    .trending-img{
+        width: 16rem!important;
+        height: 13rem;
+    }
+    .plus,.minus{
+        font-size: 0.8rem;
+    }
+    .trending-info{
+        top:2.4rem;left: 1rem;
+        min-height: 67%;
+        width: 77.9%;
+        font-size: 0.7rem;
+    }
+    .box{
+        height: 18.5rem;
+        width: 16rem;
+    }
+    .info{
+        font-size: 0.85rem;
+    }
+    .select{
+        margin-top: 0.5rem;
+    }
+    .trending-card-title{
+        font-size: 0.75rem!important;
+    }
+    .trending-description{
+        font-size: 0.6rem!important;
+       }
+  }
+  @media only screen and (max-width: 241px){
+    .trending-card{
+        width: 13rem!important;
+        height: 16rem;
+    }
+    .trending-card-title{
+        font-size: 1rem;
+    }
+    .trending-img{
+        width: 13rem!important;
+        height: 13rem;
+    }
+    .trending-info{
+        top:2.4rem;left: 1rem;
+        min-height: 67%;
+        width: 73.4%;
+        font-size: 0.7rem;
+    }
+    .box{
+        height: 18.5rem;
+        width: 13rem;
+    }
+    .trending-card-title,.trending-description{
+        font-size: 0.6rem!important;
+       }
+  }
